@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="input-div">
+        <input type="text">
+        <button id="search-btn" value="haifa">Search</button>
+    </div>
+
+
+    <div id="results"></div>
+
+    <script id="cities-template" type="text/x-handlebars">
+        {{#each cities}}
+        <div class="city">
+            <div class="city-info">
+                <h2>{{name}}</h2>
+                <h4>{{temperature}}</h4>
+                <h3>{{condition}}</h3>
+                <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png" alt="">
+            </div>
+        
+            <div class="save-remove-btns">
+                <button class="save-btn">Save</button>
+                <button class="remove-btn">Remove</button>
+            </div>
+
+         </div>
+        {{/each}}
+    </script>
+
+
+
+
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="model.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
